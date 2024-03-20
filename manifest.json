@@ -1,0 +1,17 @@
+{
+    "lang": "en-us",
+    "name": "Erinn Time",
+    "short_name": "Erinn Time",
+    "description": "Erinn Time application displays in-game time on Mabinogi Japan servers.",
+    "start_url": "/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "https://wiki.mabinogiworld.com/images/4/49/Mabisign.PNG",
+            "sizes": "512x512"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="https://wiki.mabinogiworld.com/favicon.ico" />
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="time.css">
+  <title>Erinn Time</title>
+  </head>
+  <body>
+    <header>
+      <div>Erinn Time</div>
+    </header>
+    <form id="time">
+      <output name="erinn-time" id="erinn-time" media="(prefers-color-scheme: dark)">00:00</output>
+    </form>
+    <script src="time.js"></script>
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' });
+      }
+    </script>
+  </body>
+</html>
