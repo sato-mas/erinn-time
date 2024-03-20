@@ -1,13 +1,13 @@
-const CACHE_NAME = `erinn-timer-v1`;
+const CACHE_NAME = `erinn-time-v1`;
 
 // Use the install event to pre-cache all initial resources.
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
     cache.addAll([
-      '/',
-      '/time.js',
-      '/time.css'
+      'index.html',
+      'time.js',
+      'time.css'
     ]);
   })());
 });
