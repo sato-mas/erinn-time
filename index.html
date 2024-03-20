@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="shortcut icon" href="https://wiki.mabinogiworld.com/favicon.ico" />
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="/erinn-time/manifest.json">
     <link rel="stylesheet" href="time.css">
   <title>Erinn Time</title>
   </head>
@@ -18,7 +18,7 @@
     <script src="time.js"></script>
     <script>
       if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js', { scope: '/erinn-time/' });
+        navigator.serviceWorker.register('/erinn-time/sw.js', { scope: '/erinn-time/' });
       }
     </script>
   </body>
