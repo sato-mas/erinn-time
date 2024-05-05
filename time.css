@@ -1,4 +1,3 @@
-
 @media (prefers-color-scheme: light) {
   :root {
     --bgcolor: rgb(243, 243, 243);
@@ -35,21 +34,6 @@ body {
   place-items: center;
 }
 
-header {
-  color-scheme: light dark;
-  background: var(--hdrbgcolor);
-  color: var(--hdrtxtcolor);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: clamp(0.5rem, 0.25rem + 2.5vh, 5rem);
-  padding: 1vw;
-  text-align: left;
-  font-size: clamp(0.5rem, 0.2rem + 2vh, 4rem);
-  font-weight: bold;
-}
-
 #time {
   width: 100svw;
   display: flex;
@@ -58,7 +42,7 @@ header {
 }
 
 #time #erinn-time {
-  font-size: clamp(4rem, 2rem + 10vh, 34rem);
+  font-size: clamp(1rem, 1rem + 10vh, 34rem);
   font-weight: bold;
 }
 
