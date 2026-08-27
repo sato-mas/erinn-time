@@ -3,19 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="shortcut icon" href="https://wiki.mabinogiworld.com/favicon.ico" />
-    <link rel="manifest" href="/erinn-time/manifest.json">
-    <link rel="stylesheet" href="time.css">
-  <title>Erinn Time</title>
+    <meta name="theme-color" content="#F65D0F" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="time.css" />
+    <title>Erinn Time</title>
   </head>
   <body>
-    <form id="time">
+    <main id="time">
       <output name="erinn-time" id="erinn-time" media="(prefers-color-scheme: dark)">00:00</output>
-    </form>
+    </main>
+
+    <button id="settings-button" type="button" aria-label="Set clock offset" title="Set clock offset">
+      <span aria-hidden="true">⚙︎</span>
+    </button>
+
+    <dialog id="settings-dialog" aria-labelledby="settings-title">
+      <form id="settings-form" method="dialog">
+        <h1 id="settings-title">Clock Offset</h1>
+        <label for="adjust-sec">Server clock − this device clock (seconds)</label>
+        <input id="adjust-sec" name="adjust-sec" type="number" min="-30" max="30" step="1" required />
+        <p class="settings-help">Enter a value from -30 to +30 seconds. Positive values advance the display; negative values delay it.</p>
+        <div class="settings-actions">
+          <button id="cancel-button" type="button">Cancel</button>
+          <button type="submit">Save</button>
+        </div>
+      </form>
+    </dialog>
+
     <script src="time.js"></script>
     <script>
-      if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/erinn-time/sw.js', { scope: '/erinn-time/' });
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
       }
     </script>
   </body>

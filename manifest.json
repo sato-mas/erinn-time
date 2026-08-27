@@ -1,18 +1,26 @@
 {
-    "lang": "en-us",
-    "name": "Erinn Time",
-    "short_name": "Erinn Time",
-    "description": "Erinn Time application displays in-game time on Mabinogi Japan servers.",
-    "Scope":"/erinn-time/",
-    "start_url": "./index.html",
-    "background_color": "#FFFFFF",
-    "theme_color": "#F65D0F",
-    "orientation": "any",
-    "display": "standalone",
-    "icons": [
-        {
-            "src": "./Erinn-Time.png",
-            "sizes": "512x512"
-        }
-    ]
+  "lang": "en-US",
+  "name": "Erinn Time",
+  "short_name": "Erinn Time",
+  "description": "Erinn Time application displays in-game time on Mabinogi Japan servers.",
+  "scope": "./",
+  "start_url": "./index.html",
+  "background_color": "#FFFFFF",
+  "theme_color": "#F65D0F",
+  "orientation": "any",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./Erinn-Time-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./Erinn-Time.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
 }

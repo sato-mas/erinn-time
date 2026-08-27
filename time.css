@@ -4,6 +4,11 @@
     --textcolor: rgb(28, 28, 28);
     --hdrbgcolor: rgb(246, 93, 15);
     --hdrtxtcolor: rgb(243, 243, 243);
+    --panelcolor: rgb(255, 255, 255);
+    --bordercolor: rgb(190, 190, 190);
+    --buttonbg: rgb(225, 225, 225);
+    --accentcolor: var(--hdrbgcolor);
+    --accenttext: var(--hdrtxtcolor);
   }
 }
 
@@ -13,6 +18,11 @@
     --textcolor: rgb(243, 243, 243);
     --hdrbgcolor: rgb(50, 50, 50);
     --hdrtxtcolor: rgb(243, 243, 243);
+    --panelcolor: rgb(50, 50, 50);
+    --bordercolor: rgb(105, 105, 105);
+    --buttonbg: rgb(70, 70, 70);
+    --accentcolor: rgb(246, 93, 15);
+    --accenttext: rgb(255, 255, 255);
   }
 }
 
@@ -21,7 +31,8 @@ html {
   font-size: 100%;
 }
 
-html, body {
+html,
+body {
   color-scheme: light dark;
   background: var(--bgcolor);
   color: var(--textcolor);
@@ -32,6 +43,7 @@ html, body {
 body {
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 
 #time {
@@ -41,8 +53,106 @@ body {
   align-items: center;
 }
 
-#time #erinn-time {
+#erinn-time {
   font-size: clamp(1rem, 1rem + 10vh, 34rem);
   font-weight: bold;
 }
 
+#settings-button {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 1px solid var(--bordercolor);
+  border-radius: 50%;
+  background: var(--panelcolor);
+  color: var(--textcolor);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 18%);
+}
+
+#settings-button:hover {
+  filter: brightness(0.96);
+}
+
+#settings-button:focus-visible,
+#settings-form button:focus-visible,
+#adjust-sec:focus-visible {
+  outline: 3px solid var(--accentcolor);
+  outline-offset: 2px;
+}
+
+#settings-dialog {
+  width: min(22rem, calc(100vw - 2rem));
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid var(--bordercolor);
+  border-radius: 0.75rem;
+  background: var(--panelcolor);
+  color: var(--textcolor);
+  box-shadow: 0 12px 36px rgb(0 0 0 / 35%);
+}
+
+#settings-dialog::backdrop {
+  background: rgb(0 0 0 / 45%);
+}
+
+#settings-form {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+
+#settings-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+#settings-form label {
+  font-size: 0.95rem;
+}
+
+#adjust-sec {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--bordercolor);
+  border-radius: 0.4rem;
+  background: var(--bgcolor);
+  color: var(--textcolor);
+  font: inherit;
+  font-size: 1.1rem;
+}
+
+.settings-help {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.settings-actions button {
+  min-width: 5rem;
+  padding: 0.55rem 0.9rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: var(--buttonbg);
+  color: var(--textcolor);
+  font: inherit;
+  cursor: pointer;
+}
+
+.settings-actions button[type='submit'] {
+  background: var(--accentcolor);
+  color: var(--accenttext);
+}
