@@ -54,7 +54,7 @@ body {
 }
 
 #erinn-time {
-  font-size: clamp(1rem, 1rem + 10vh, 34rem);
+  font-size: clamp(2rem, 2rem + 10vh, 34rem);
   font-weight: bold;
 }
 
