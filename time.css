@@ -46,25 +46,21 @@ body {
 }
 
 #time {
-  position: fixed;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  width: 100%;
+  position: static;
 }
 
 #erinn-time {
+  position: fixed;
+  left: 50%;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 1;
+
   display: block;
   white-space: nowrap;
   line-height: 1;
   font-size: 24vw;
   font-weight: bold;
-}
-
-@media (max-height: 400px) {
-  #erinn-time {
-    font-size: 30vh;
-  }
 }
 
 #settings-button {

@@ -32,10 +32,46 @@
     </dialog>
 
     <script src="time.js"></script>
+
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./sw.js');
       }
+    </script>
+
+    <!-- Split Screen viewport debug -->
+    <script>
+      const viewportDebug = document.createElement('pre');
+
+      viewportDebug.style.cssText = `
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99999;
+        margin: 0;
+        padding: 4px;
+        background: rgba(255, 255, 255, 0.9);
+        color: black;
+        font-size: 12px;
+        line-height: 1.2;
+        pointer-events: none;
+      `;
+
+      document.body.appendChild(viewportDebug);
+
+      function updateViewportDebug() {
+        viewportDebug.textContent =
+          `inner: ${window.innerWidth} x ${window.innerHeight}\n` +
+          `visual: ${Math.round(window.visualViewport?.width ?? 0)} x ` +
+          `${Math.round(window.visualViewport?.height ?? 0)}\n` +
+          `DPR: ${window.devicePixelRatio}`;
+      }
+
+      updateViewportDebug();
+
+      window.addEventListener('resize', updateViewportDebug);
+      window.visualViewport?.addEventListener('resize', updateViewportDebug);
     </script>
   </body>
 </html>
