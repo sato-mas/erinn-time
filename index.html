@@ -11,12 +11,8 @@
   </head>
   <body>
     <main id="time">
-      <output name="erinn-time" id="erinn-time" media="(prefers-color-scheme: dark)">0:00</output>
+      <button id="erinn-time" type="button" aria-label="Set clock offset" aria-haspopup="dialog" aria-controls="settings-dialog" title="Set clock offset">0:00</button>
     </main>
-
-    <button id="settings-button" type="button" aria-label="Set clock offset" title="Set clock offset">
-      <span aria-hidden="true">⚙︎</span>
-    </button>
 
     <dialog id="settings-dialog" aria-labelledby="settings-title">
       <form id="settings-form" method="dialog">

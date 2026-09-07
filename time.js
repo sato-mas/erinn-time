@@ -1,6 +1,5 @@
 // filename=time.js
 const outputField = document.getElementById('erinn-time');
-const settingsButton = document.getElementById('settings-button');
 const settingsDialog = document.getElementById('settings-dialog');
 const settingsForm = document.getElementById('settings-form');
 const adjustSecInput = document.getElementById('adjust-sec');
@@ -33,7 +32,7 @@ function displayErinnTime() {
   const minutes = Math.floor(erinnMinutes % 60);
   const hours = Math.floor(erinnMinutes / 60);
 
-  outputField.value = hours + ':' + to10MinutesInc(minutes);
+  outputField.textContent = hours + ':' + to10MinutesInc(minutes);
 }
 
 function openSettings() {
@@ -43,7 +42,7 @@ function openSettings() {
   adjustSecInput.select();
 }
 
-settingsButton.addEventListener('click', openSettings);
+outputField.addEventListener('click', openSettings);
 
 cancelButton.addEventListener('click', () => {
   settingsDialog.close();

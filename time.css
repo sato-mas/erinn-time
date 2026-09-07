@@ -57,34 +57,19 @@ body {
   z-index: 1;
 
   display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
   white-space: nowrap;
   line-height: 1;
   font-size: 18vw;
   font-weight: bold;
 }
 
-#settings-button {
-  position: fixed;
-  right: max(1rem, env(safe-area-inset-right));
-  bottom: max(1rem, env(safe-area-inset-bottom));
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0;
-  border: 1px solid var(--bordercolor);
-  border-radius: 50%;
-  background: var(--panelcolor);
-  color: var(--textcolor);
-  font-size: 1.6rem;
-  line-height: 1;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 18%);
-}
-
-#settings-button:hover {
-  filter: brightness(0.96);
-}
-
-#settings-button:focus-visible,
+#erinn-time:focus-visible,
 #settings-form button:focus-visible,
 #adjust-sec:focus-visible {
   outline: 3px solid var(--accentcolor);
