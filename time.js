@@ -22,10 +22,6 @@ function loadAdjustSec() {
 
 let adjustSec = loadAdjustSec();
 
-function toDoubleDigits(value) {
-  return String(value).padStart(2, '0');
-}
-
 function to10MinutesInc(value) {
   return Math.floor(value / 10) + '0';
 }
@@ -37,7 +33,7 @@ function displayErinnTime() {
   const minutes = Math.floor(erinnMinutes % 60);
   const hours = Math.floor(erinnMinutes / 60);
 
-  outputField.value = toDoubleDigits(hours) + ':' + to10MinutesInc(minutes);
+  outputField.value = hours + ':' + to10MinutesInc(minutes);
 }
 
 function openSettings() {
